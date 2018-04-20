@@ -1,11 +1,19 @@
+<style type="text/css">
+
+</style>
+
+
 <h3 class="uk-heading-divider">Account Register</h3>
 {{#if errors}}
       {{#each errors}}
         <div class="alert alert-danger">{{msg}}</div>
       {{/each}}
 {{/if}}
+
+<div class="uk-child-width-expand@s " uk-grid>
+<div class="uk-card uk-card-default uk-card-body  uk-width-1-2@m">
 <form method="post" action="/users/register">
- <fieldset class="uk-fieldset">
+ <fieldset class="uk-fieldset uk-width-1-2">
          <div class="uk-margin">
           <h5 class="uk-text-bold">Name</h5> <input class="uk-input" type="text" name="name" placeholder="Name">
         </div>
@@ -21,14 +29,36 @@
          <div class="uk-margin">
           <h5 class="uk-text-bold">Confirm Password</h5><input class="uk-input" type="text" name="password2" placeholder="Password">
         </div>
-      <div class="uk-margin">
-        <h5 class="uk-text-bold">Upload photo</h5><input class="uk-input" type="file" name="file"  placeholder="example: .png,.jpeg">
-      </div>
+      {{!-- <div class="uk-margin">
+        <h5 class="uk-text-bold">Upload photo</h5><input class="uk-button-default" type="file" name="file"  placeholder="example: .png,.jpeg">
+      </div> --}}
  </fieldset>
  <button class="uk-button uk-button-primary" type="submit"><h5>Submit
         <span class="uk-margin-small-right" uk-icon="check"></span> 
     </h5></button>
 </form>
+</div>
+<br>
+<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m ">
+ 
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {{!-- <h2 class="page-header">Register</h2>
 {{#if errors}}

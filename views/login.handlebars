@@ -1,8 +1,10 @@
 
 <h3 class="uk-heading-divider">Account Login</h3>
 {{message}}
+<div class="uk-child-width-expand@s " uk-grid>
+<div class="uk-card uk-card-default uk-card-body  uk-width-1-2@m">
 <form  method="post" action="/users/login">
-    <fieldset class="uk-fieldset">
+    <fieldset class="uk-fieldset uk-width-1-2">
         <div class="uk-margin">
           <h5 class="uk-text-bold">Username</h5>
            <input class="uk-input" type="text" name="username" placeholder="Username">
@@ -16,8 +18,8 @@
         <span class="uk-margin-small-right" uk-icon="check"></span> 
     </h5></button>
 </form>   
-
-
+</div>
+</div>
 {{!-- 
 <h2 class="page-header">Account Login</h2>
 {{message}} --}}

@@ -1,22 +1,27 @@
 var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var exphbs = require('express-handlebars');
-var expressValidator = require('express-validator');
-var flash = require('connect-flash');
-var session = require('express-session');
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-var mongo = require('mongodb');
-var mongoose = require('mongoose');
+  var path = require('path');
+  var cookieParser = require('cookie-parser');
+  var bodyParser = require('body-parser');
+  var exphbs = require('express-handlebars');
+  var expressValidator = require('express-validator');
+  var flash = require('connect-flash');
+  var session = require('express-session');
+  var passport = require('passport');
+  var LocalStrategy = require('passport-local').Strategy;
+  var mongo = require('mongodb');
+  var mongoose = require('mongoose');
+ // const multer = require('multer');
+ // const GridFsStorage = require('multer-gridfs-storage');
+//  const Grid = require('gridfs-stream');
+//const methodOverride = require('method-override');
+
+mongoose.connect('mongodb://localhost/loginapp1');
+var db = mongoose.connection;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-mongoose.connect('mongodb://localhost/db1');
-var db = mongoose.connection;
-// Init App
+
 var app = express();
 // View Engine
 app.set('views', path.join(__dirname, 'views'));
@@ -25,6 +30,7 @@ app.set('view engine', 'handlebars');
 // BodyParser Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use(cookieParser());
 // Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
@@ -34,6 +40,8 @@ app.use(session({
     saveUninitialized: true,
     resave: true
 }));
+
+
 // Passport init
 app.use(passport.initialize());
 app.use(passport.session());
